@@ -6,18 +6,23 @@
 
 import os
 import csv
+from tarfile import PAX_NUMBER_FIELDS
 
-Month_IND = 0
-Profit_IND = 1
+#filename = ('analysis/mytextfile.txt')
 
 budget_data = r'PyBank\resources\budget_data.csv'
+
+previous_row = 0
 net_months = 0
 total_profits = 0
-prev_row = None
+
 
 with open(budget_data, 'r') as csvfile:
      csvreader = csv.reader(csvfile, delimiter=',')
      csv_header = next(csvfile)
+
+#if budget_months == row [0]
+#print (row)
 
      for row in csvreader:
           #total months
@@ -28,40 +33,28 @@ with open(budget_data, 'r') as csvfile:
           total_profits = current_profit + total_profits
 
      # ---changes and average of changes
-     current_row = int(row[1])
-if prev_row is not None:
-     change = current_row - prev_row
-     current_row = prev_row
-     average_change = change / 86
+     changes = previous_row - int(row[1]) 
+     count = changes*1.87
+     average_of_changes = count/net_months
 
+     #greatest increase in profits + date
+def maximum (max_num):
+     for max_num in max_num:
+          max_num = int(budget_data[1])
+     return maximum
 
-#values = int(input('what are the maximum and minimum values?'))
-
-     #greatest increase in profits
-if row in csvreader:
-     float(row[1]) == max(row[1]):
-     print (row)
-     elif
-     int(row [1]) = min(row[1]):
-     float(row)
-
-     #date of greatest increase in profits
-     
-
-     #greatest decrease in profits 
-    
-
-     #date of greatest decrease
+#greatest decrease in profits + date
+def minimum (min_num):
+     for min_num in min_num:
+          min_num = int(budget_data[1])
+     return minimum 
      
 print ("Financial Analysis")
 print ("---")
 print (f'Total Months: {net_months}')
 print (f'Total: {total_profits}')
-#print (f'{}')
-
-
+print (f'average change:{average_of_changes}')
+print (f'greatest increase in profits{maximum}')
+print (f'greatest decrease in profits{minimum}')
 
 #class 3 activity 7 (refer to)
-
-#main.py = 'Analysis/mytextfile.txt'
-
