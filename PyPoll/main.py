@@ -9,10 +9,7 @@ import os
 import random
 
 election_data = r'PyPoll\resources\election_data.csv'
-list = {election_data[0]: 
-        election_data[1]:
-        election_data[2]}
-row = list
+row = zip(election_data[0], election_data[1], election_data[2])
 
 total_votes = 0
 name1 = ()
@@ -21,22 +18,27 @@ name3 = ()
 name1_votes = ()
 name2_votes = ()
 name3_votes  =()
+percentage_rate = ()
+candidate_name_list = []
 
-#total votes
-#for num in int(row[0]):
-    #total_votes += num
+with open(election_data, 'r') as csvfile:
+     csvreader = csv.reader(csvfile, delimiter=',')
+     csv_header = next(csvfile)
+
+     for row in csvreader:
+          total_votes = total_votes + 1
     #print(total_votes)
 
 #number of times a name appears
 if row[2] in name1:
-    name1 = list.append(name1)
-    name1_votes = len(list)
+    name1 = candidate_name_list.append(name1)
+    name1_votes = len(candidate_name_list)
     print(name1)
     print(name1_votes)
 
 if row[2] in name2:
-     name2 = list.append(name2)
-     name2_votes = len(list)
+     name2 = candidate_name_list.append(name2)
+     name2_votes = len(candidate_name_list)
      print(name2)
      print(name2_votes)
 
@@ -46,17 +48,8 @@ if row[2] in name3:
      print(name3)
      print(name3_votes)
 
-with open(election_data, 'r') as csvfile:
-     csvreader = csv.reader(csvfile, delimiter=',')
-     csv_header = next(csvfile)
-     
-candidate_name = input ("which candidate has the most votes?")
-for row in csvreader:
-     if candidate_name == row[2]:
-     #percentages = (candidate_totalvotes/total_votes)*100
-
-     #if candidate name is = to ballot id --> get sum of votes
-     #sum_votes = total
+#percent = round(int(row[8]) / total_votes * 100, 2)
+        #percentage_rate.append(str(percent) + "%")
 
 #winner
 #if name1_votes > name2_votes
@@ -70,20 +63,11 @@ for row in csvreader:
 #else
 #print (name3)
 
-
-      #if candidate_name != candidate_options:
-           # candidate_options.append(candidate_name)
-            #candidate_votes[candidate_name] = 0
-            #candidate_votes[candidate_name] = candidate_votes [candidate_name] + 1
-            #print (candidate_name)
-
-#print (f"election results")
-#print ('---')
-#print (f'{total_votes}')
+print (f"election results")
+print ('---')
+print (f'{total_votes}')
 #print ("{name1}:{percentage1},{vote_count1}")
 #print ("{name2}:{percentage2},{vote_count2}")
 #print ("{name3}:{percentage3},{vote_count3}")
-#print ('---')
-#print (f"Winner: Dianna DeGette")
-
-#main = 'Analysis/mytextfile.txt'
+#print ('---') 
+#print (f'{winner})                                                                                

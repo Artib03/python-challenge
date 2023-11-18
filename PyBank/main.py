@@ -15,14 +15,15 @@ budget_data = r'PyBank\resources\budget_data.csv'
 previous_row = 0
 net_months = 0
 total_profits = 0
-
+month_of_change = []
+net_change_list = []
+greatest_increase = [",0"]
+greatest_decrease = [",999999999999999999"]
+total_net = 0
 
 with open(budget_data, 'r') as csvfile:
      csvreader = csv.reader(csvfile, delimiter=',')
      csv_header = next(csvfile)
-
-#if budget_months == row [0]
-#print (row)
 
      for row in csvreader:
           #total months
@@ -33,28 +34,29 @@ with open(budget_data, 'r') as csvfile:
           total_profits = current_profit + total_profits
 
      # ---changes and average of changes
-     changes = previous_row - int(row[1]) 
-     count = changes*1.87
-     average_of_changes = count/net_months
+     #net_change = int(row[1]) - previous_row
+     #previous_row = int(row[1])
+     #net_change_list += [net_change]
+     #month_of_change += [row[0]
 
      #greatest increase in profits + date
-def maximum (max_num):
-     for max_num in max_num:
-          max_num = int(budget_data[1])
-     return maximum
+#def maximum (max_num):
+     #for max_num in max_num:
+          #max_num = int(row[1])
+     #return maximum
 
 #greatest decrease in profits + date
-def minimum (min_num):
-     for min_num in min_num:
-          min_num = int(budget_data[1])
-     return minimum 
+#def minimum (min_num):
+     #for min_num in min_num:
+         #min_num = int(row[1])
+     #return minimum 
      
 print ("Financial Analysis")
 print ("---")
 print (f'Total Months: {net_months}')
 print (f'Total: {total_profits}')
-print (f'average change:{average_of_changes}')
-print (f'greatest increase in profits{maximum}')
-print (f'greatest decrease in profits{minimum}')
+#print (f'average change:{changes}')
+#print (f'greatest increase in profits{maximum}')
+#print (f'greatest decrease in profits{minimum}')
 
 #class 3 activity 7 (refer to)
