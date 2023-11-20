@@ -34,19 +34,13 @@ with open(election_data, 'r') as csvfile:
 
           #blankdictionary['key1': 'name1', 'key2': 'name2', 'key3': 'name3'] = blankdictionary [key =] + 1
 
-          if name1 not in blanklist:
-               blanklist.append(row[2])
-               name1 = row[2]
-               print(name1)
-               found = False
-          
-          if name1 is True:
-               print(name2)
+     if name1 not in blanklist:
+          blanklist.append(row[2])
+          name1 = row[2]
+     print(name1)
 
-
-
-    #percent = round(name1_votes) / total_votes * 100, 2)
-        #percentage_rate.append(str(percent) + "%")
+     #percent = round(name1_votes) / total_votes * 100, 2)
+      #percentage_rate.append(str(percent) + "%")
 
 #winner
 #if name1_votes > name2_votes

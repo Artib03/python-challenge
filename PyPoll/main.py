@@ -39,13 +39,6 @@ with open(election_data, 'r') as csvfile:
           name1 = row[2]
      print(name1)
 
-     if name1_votes in total_votes:
-          name1_votes < total_votes
-          name1 == total_votes
-
-          blanklist.append(name2)
-          print(name2)
-     
      #percent = round(name1_votes) / total_votes * 100, 2)
       #percentage_rate.append(str(percent) + "%")
 
